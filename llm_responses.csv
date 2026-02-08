@@ -1,0 +1,142 @@
+﻿prompt_id,category,prompt_text,response_text,accuracy_score,reasoning_score,relevance_score,completeness_score,hallucination_flag
+f1,factual_stem_business,"A company increases employee salaries by 6% in a year when national inflation reaches 9%.
+Define nominal income and real income in this context, then estimate the approximate real change in purchasing power and explain your reasoning.","Nominal income is the salary measured in current money terms, without adjusting for inflation. In this context, the nominal income of employees increases by 6% because their salaries are raised by 6%.
+
+Real income is the salary adjusted for changes in the price level, meaning it reflects the actual purchasing power of the salary after accounting for inflation.
+
+To estimate the real change in purchasing power, compare the salary increase with inflation.
+
+Approximate real change in income
+Real change ≈ nominal increase − inflation rate
+Real change ≈ 6% − 9% = −3%
+
+This means employees experience an approximate 3% decrease in real income. Even though they receive higher salaries in nominal terms, prices are rising faster than wages, so their purchasing power falls. Employees can buy about 3% fewer goods and services than before.",4,4.4,5,4.7,0
+f2,factual_stem_business,"A retail analytics team observes a strong positive correlation between digital advertising spending and monthly sales growth over 24 months. 
+Explain why this relationship does not automatically imply causation and describe one realistic confounding variable that could drive both advertising spend and sales simultaneously. ","A strong positive correlation means that digital advertising spending and sales growth move together, but it does not prove that higher advertising causes higher sales. Correlation alone cannot rule out alternative explanations, such as reverse causality or the influence of other factors. For example, rising sales may lead management to increase advertising budgets, rather than advertising being the original cause of sales growth.
+
+One realistic confounding variable is overall market demand or consumer confidence. During periods of strong economic conditions or seasonal demand, consumers are more willing to spend, which naturally increases sales. At the same time, firms often respond to these favorable conditions by increasing their advertising budgets to capture more demand. In this case, higher demand drives both increased advertising spending and higher sales, creating a positive correlation even if advertising itself is not the sole or primary cause of sales growth.",4.9,5,5,5,0
+f3,factual_stem_business,"A bank trains a predictive model using historical loan records labeled as “default” or “non-default.”
+Explain step-by-step how supervised learning operates in this scenario, including the role of labeled data and model evaluation.
+Then briefly contrast this with how an unsupervised method might be used for customer segmentation in risk analysis.","Supervised learning in this scenario works as follows.
+
+Step 1: Prepare labeled data
+The bank collects historical loan records. Each record includes input features such as income, credit score, loan amount, employment history, and repayment behavior. Each record is labeled as either “default” or “non-default.” These labels represent the known outcomes and are essential for supervised learning.
+
+Step 2: Split the data
+The dataset is typically divided into a training set and a test (or validation) set. The training set is used to teach the model, while the test set is used to evaluate how well the model performs on unseen data.
+
+Step 3: Train the model
+The model learns a mapping from the input features to the output label. During training, it makes predictions on the training data and compares them to the true labels. The model adjusts its internal parameters to reduce prediction errors, for example by minimizing a loss function that penalizes incorrect default predictions.
+
+Step 4: Evaluate the model
+After training, the model is tested on the test dataset. Performance is measured using metrics such as accuracy, precision, recall, or the default prediction error rate. This evaluation shows how well the model can predict default risk for new borrowers.
+
+Step 5: Use the model for prediction
+Once validated, the model is applied to new loan applicants to predict the probability of default, supporting lending and risk management decisions.
+
+Contrast with unsupervised learning for customer segmentation
+In unsupervised learning, there are no labels like “default” or “non-default.” Instead, the bank might use customer data such as income, spending behavior, and credit usage to group customers into segments based on similarity. Methods like clustering identify patterns or risk profiles without predefined outcomes. These segments help analysts understand different types of customers and tailor risk strategies, but they do not directly predict default in the way supervised learning does.",4.5,4.8,5,5,0
+r1,quantitative_multistep_reasoning,"A startup earns $500,000 in Year 1. Revenue increases by 20% in Year 2 and then by 10% in Year 3, with each increase applied to the previous year’s revenue.
+Calculate the final revenue in Year 3 and show each step clearly, explaining why simple addition of percentages would be incorrect.","Year 1 revenue = 500,000
+
+Step 1: Calculate Year 2 revenue
+Revenue increases by 20% based on Year 1.
+
+20% of 500,000 = 0.20 × 500,000 = 100,000
+
+Year 2 revenue = 500,000 + 100,000 = 600,000
+
+Step 2: Calculate Year 3 revenue
+Revenue increases by 10% based on Year 2, not Year 1.
+
+10% of 600,000 = 0.10 × 600,000 = 60,000
+
+Year 3 revenue = 600,000 + 60,000 = 660,000
+
+Final revenue in Year 3 = 660,000
+
+Why simple addition of percentages is incorrect
+Adding the percentages directly (20% + 10% = 30%) and applying them once to Year 1 would give:
+
+30% of 500,000 = 150,000
+500,000 + 150,000 = 650,000
+
+This is incorrect because the 10% increase in Year 3 is applied to the higher Year 2 revenue, not the original Year 1 revenue. Percentage increases compound over time, meaning each increase builds on the previous year’s total.",5,4.7,5,5,0
+r2,quantitative_multistep_reasoning,"An investor allocates 70% of their capital to Asset A with an expected annual return of 8%, and 30% to Asset B with an expected annual return of 15%.
+Calculate the portfolio’s expected return and explain why a weighted average based on capital allocation is economically appropriate.","Step 1: Identify the weights and returns
+Weight of Asset A = 70% = 0.70
+Expected return of Asset A = 8% = 0.08
+
+Weight of Asset B = 30% = 0.30
+Expected return of Asset B = 15% = 0.15
+
+Step 2: Calculate the weighted return of each asset
+Contribution of Asset A = 0.70 × 0.08 = 0.056 or 5.6%
+Contribution of Asset B = 0.30 × 0.15 = 0.045 or 4.5%
+
+Step 3: Calculate the portfolio’s expected return
+Portfolio expected return = 5.6% + 4.5% = 10.1%
+
+The portfolio’s expected return is 10.1% per year.
+
+Why a weighted average is economically appropriate
+Each asset’s impact on total portfolio performance depends on how much capital is invested in it. Asset A influences returns more than Asset B because it represents a larger share of the total investment. Using weights based on capital allocation reflects the actual economic exposure to each asset, ensuring the portfolio return accurately represents the combined performance of all invested funds.",5,4.4,5,5,0
+r3,quantitative_multistep_reasoning,"Project X has a 40% probability of generating $2 million profit and a 60% probability of generating zero profit. Project Y guarantees $750,000 profit. 
+Calculate the expected value of Project X and determine which project a risk-neutral decision-maker would choose, explaining the logic behind the decision.","Step 1: Identify outcomes and probabilities for Project X
+Profit = 2,000,000 with probability 40% = 0.40
+Profit = 0 with probability 60% = 0.60
+
+Step 2: Calculate expected value of Project X
+Expected value = (0.40 × 2,000,000) + (0.60 × 0)
+Expected value = 800,000 + 0
+Expected value = 800,000
+
+So, Project X has an expected value of $800,000.
+
+Step 3: Compare with Project Y
+Project Y guarantees a profit of $750,000.
+
+Step 4: Decision by a risk-neutral decision-maker
+A risk-neutral decision-maker chooses the option with the higher expected value, regardless of uncertainty or risk. Since Project X has an expected value of $800,000, which is higher than Project Y’s guaranteed $750,000, a risk-neutral decision-maker would choose Project X.
+
+The logic is that risk-neutral individuals care only about average expected outcomes over time, not variability, so the higher expected payoff makes Project X the preferred choice.",5,5,5,5,0
+I1,instruction_following,"Explain capital budgeting in exactly three bullet points.
+The total response must not exceed 100 words, must not include formulas, and each bullet must begin with a verb.","* Identify long-term investment projects that require significant capital, such as equipment purchases, expansions, or new ventures.
+* Evaluate and compare projects by estimating future cash benefits and assessing whether they justify the initial investment.
+* Decide which projects to accept or reject to maximize firm value while considering risk, strategic goals, and resource constraints.",5,5,5,5,0
+I2,instruction_following,"Define opportunity cost in exactly two sentences using a business example, and do not exceed 100 words.","Opportunity cost is the value of the next best alternative that is given up when a business makes a decision. For example, if a company uses its budget to open a new retail store, the opportunity cost is the profit it could have earned by investing that same money in expanding its online sales platform instead.",5,4.5,4.5,4.6,0
+I3,instruction_following,"List two advantages and one limitation of using AI in banking fraud detection.
+Provide exactly three short items labeled “Advantage 1,” “Advantage 2,” and “Limitation,” with no additional explanation.","Advantage 1: Detects suspicious transactions quickly across large volumes of data
+Advantage 2: Improves accuracy by identifying complex patterns humans may miss
+Limitation: Can produce false positives that inconvenience legitimate customers",5,4.5,5,5,0
+A1,analytical_edge_case,"Analysis three ethical or statistical risks of using machine learning models for credit approval.
+For each risk, briefly explain the potential business impact and the potential societal impact, and avoid absolute or exaggerated claims.","Risk 1: Bias in training data
+Business impact: If historical data reflects past biases, the model may approve or reject applicants unevenly, which can reduce market reach, harm reputation, and increase regulatory scrutiny.
+Societal impact: Certain groups may face higher rejection rates despite similar creditworthiness, contributing to unequal access to financial services.
+
+Risk 2: Model opacity and limited explainability
+Business impact: Difficulty explaining credit decisions can make it harder to comply with regulations, handle customer disputes, and build trust with regulators and customers.
+Societal impact: Applicants may not understand why they were denied credit, reducing perceived fairness and limiting their ability to improve future applications.
+
+Risk 3: Data drift and changing economic conditions
+Business impact: Models trained on outdated data may misestimate risk during economic shifts, leading to higher default rates or missed lending opportunities.
+Societal impact: Borrowers may be unfairly approved or denied during changing conditions, increasing financial instability for individuals and communities.",5,5,5,5,0
+A2,analytical_edge_case,"A firm automates 60% of routine accounting tasks using AI.
+Analyze the short-term measurable impacts (e.g., cost, speed, error rates) and the longer-term structural impacts on workforce composition and skill demand.
+Clearly distinguish empirical outcomes from speculative projections.","Short-term measurable impacts (empirical outcomes)
+
+Cost: Automation of 60% of routine tasks typically reduces labor hours spent on data entry, reconciliation, and basic reporting. This can lower operating costs through reduced overtime, slower hiring needs, or reassignment of staff, although initial implementation and training costs may offset savings in the first year.
+
+Speed: Transaction processing and report generation become faster because AI systems operate continuously and handle large volumes quickly. Month-end closing cycles and routine audits are often completed in less time.
+
+Error rates: Automated systems generally reduce manual entry errors and calculation mistakes. Error rates decline for standardized tasks, though new types of system or data-quality errors may appear and need monitoring.
+
+Longer-term structural impacts (more speculative but grounded in observed trends)
+
+Workforce composition: Demand for purely routine accounting roles is likely to decline over time, while roles focused on oversight, analysis, and judgment become more prominent. Teams may become smaller but more specialized.
+
+Skill demand: There is likely increased demand for skills in data interpretation, AI system supervision, internal controls, and business advisory work. Accounting professionals may need stronger analytical, technological, and communication skills, while basic transactional skills become less central.",5,4.7,5,5,0
+A3,analytical_edge_case,"Explain what data leakage means in predictive financial modeling.
+Then describe one realistic corporate forecasting scenario where future information might unintentionally enter the training data, and explain why this would distort performance metrics.","Data leakage in predictive financial modeling occurs when information that would not be available at the time of prediction is unintentionally included in the training data. This allows the model to indirectly “see the future,” leading it to learn patterns that cannot be used in real-world decision making.
+
+A realistic scenario is sales forecasting where the training dataset includes revised revenue figures that were updated after quarter-end adjustments or audit corrections. If these finalized numbers are used to predict earlier forecasts, the model benefits from information that was not known at the forecasting date. This distorts performance metrics by making the model appear more accurate in testing than it would be in live use, since real forecasts must rely only on information available at the time decisions are made.",5,4.7,5,4.9,0
